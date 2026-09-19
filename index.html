@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/edumk-logo.svg" />
+    <title>EduMK — منصة التعليم الطبي | مستشفى الولادة والأطفال</title>
+    <meta name="description" content="المنصة الرسمية للتعليم الطبي المستمر وتطوير الكفاءات المهنية — مستشفى الولادة والأطفال، حفر الباطن" />
+    <meta name="author" content="EduMK — Academic Affairs & Training, MCH" />
+    <meta name="theme-color" content="#3AA8C1" />
+
+    <meta property="og:title" content="EduMK — منصة التعليم الطبي المعتمد" />
+    <meta property="og:description" content="المنصة الرسمية للتعليم الطبي المستمر — مستشفى الولادة والأطفال" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/edumk-logo.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <style>
+      html { font-family: 'IBM Plex Sans Arabic', Inter, sans-serif; }
+      body { margin: 0; padding: 0; background: #FAFAF9; }
+      /* Loading state */
+      #root:empty::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #5B3758 0%, #3AA8C1 100%);
+      }
+      #root:empty::after {
+        content: '⟳';
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        color: #FEFAEC;
+        font-size: 48px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

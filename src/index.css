@@ -1,0 +1,497 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ════════════════════════════════════════════════════
+   EduMK DESIGN SYSTEM — Moonstone × Plum Wine × Vanilla
+   ════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Moonstone (Primary / Brand) ── */
+  --moonstone-50:  #E8F4F7;
+  --moonstone-100: #D2E9EF;
+  --moonstone-200: #B5DEE6;
+  --moonstone-300: #88C5D3;
+  --moonstone-400: #5DB6C9;
+  --moonstone-500: #3AA8C1;
+  --moonstone-600: #2E8FA6;
+  --moonstone-700: #2A7E92;
+  --moonstone-800: #1A5566;
+  --moonstone-900: #0F4A57;
+
+  /* ── Plum Wine (Accent / Luxury) ── */
+  --plum-50:  #F3EAF1;
+  --plum-100: #E9D6E5;
+  --plum-200: #D9B8D2;
+  --plum-300: #B989B0;
+  --plum-400: #8A5784;
+  --plum-500: #6D4567;
+  --plum-700: #5B3758;
+  --plum-800: #4A2A47;
+  --plum-900: #3A1F38;
+
+  /* ── Vanilla (Warm / Highlights) ── */
+  --vanilla-50:  #FEFAEC;
+  --vanilla-100: #FBF2D2;
+  --vanilla-200: #F8ECBC;
+  --vanilla-300: #F3E5AB;
+  --vanilla-500: #D4BE6F;
+  --vanilla-700: #9B7E25;
+  --vanilla-800: #7C5E0F;
+
+  /* ── Neutral ── */
+  --neutral-0:   #FFFFFF;
+  --neutral-50:  #FAFAF9;
+  --neutral-100: #F5F5F4;
+  --neutral-200: #E7E5E4;
+  --neutral-300: #D6D3D1;
+  --neutral-400: #A8A29E;
+  --neutral-500: #78716C;
+  --neutral-600: #57534E;
+  --neutral-700: #44403C;
+  --neutral-800: #292524;
+  --neutral-900: #1C1917;
+
+  /* ── Semantic ── */
+  --success: #059669;
+  --warning: #D97706;
+  --error:   #DC2626;
+
+  /* ── Semantic Surfaces (Light Mode) ── */
+  --bg-primary:   var(--neutral-0);
+  --bg-secondary: var(--neutral-50);
+  --bg-tertiary:  var(--neutral-100);
+  --text-primary:   var(--neutral-900);
+  --text-secondary: var(--neutral-600);
+  --text-tertiary:  var(--neutral-400);
+  --border-color: var(--neutral-200);
+
+  /* ── Typography ── */
+  --font-sans: "IBM Plex Sans Arabic", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-lg:   18px;
+  --text-xl:   20px;
+  --text-2xl:  24px;
+  --text-3xl:  32px;
+  --text-4xl:  40px;
+  --font-light:    300;
+  --font-regular:  400;
+  --font-medium:   500;
+  --font-semibold: 600;
+  --font-bold:     700;
+
+  /* ── Radius ── */
+  --radius: 0.625rem; /* 10px */
+
+  /* ════ Shadcn/Tailwind Token Mapping ════ */
+  --background: var(--neutral-0);
+  --foreground: var(--neutral-900);
+  --card: var(--neutral-0);
+  --card-foreground: var(--neutral-900);
+  --popover: var(--neutral-0);
+  --popover-foreground: var(--neutral-900);
+  --primary: var(--moonstone-500);
+  --primary-foreground: #ffffff;
+  --secondary: var(--neutral-100);
+  --secondary-foreground: var(--neutral-700);
+  --muted: var(--neutral-100);
+  --muted-foreground: var(--neutral-500);
+  --accent: var(--moonstone-50);
+  --accent-foreground: var(--moonstone-700);
+  --destructive: #DC2626;
+  --destructive-foreground: #ffffff;
+  --border: var(--neutral-200);
+  --input: var(--neutral-200);
+  --ring: var(--moonstone-500);
+
+  /* Chart */
+  --chart-1: var(--moonstone-500);
+  --chart-2: var(--plum-500);
+  --chart-3: var(--vanilla-500);
+  --chart-4: #059669;
+  --chart-5: #D97706;
+
+  /* Sidebar */
+  --sidebar: var(--vanilla-50);
+  --sidebar-foreground: var(--neutral-700);
+  --sidebar-primary: var(--moonstone-500);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--moonstone-50);
+  --sidebar-accent-foreground: var(--moonstone-700);
+  --sidebar-border: var(--neutral-200);
+  --sidebar-ring: var(--moonstone-500);
+}
+
+/* ── Dark Mode ── */
+[data-theme="dark"], .dark {
+  --bg-primary:   var(--moonstone-900);
+  --bg-secondary: #0A3540;
+  --bg-tertiary:  #052730;
+  --text-primary:   var(--vanilla-50);
+  --text-secondary: var(--moonstone-200);
+  --text-tertiary:  var(--moonstone-300);
+  --border-color: rgba(255,255,255,0.1);
+
+  --background: var(--moonstone-900);
+  --foreground: #FEFAEC;
+  --card: #0A3540;
+  --card-foreground: #FEFAEC;
+  --popover: #0A3540;
+  --popover-foreground: #FEFAEC;
+  --primary: var(--moonstone-400);
+  --primary-foreground: var(--moonstone-900);
+  --secondary: #0A3540;
+  --secondary-foreground: var(--moonstone-200);
+  --muted: #052730;
+  --muted-foreground: var(--moonstone-300);
+  --accent: #0A3540;
+  --accent-foreground: var(--moonstone-300);
+  --border: rgba(255,255,255,0.1);
+  --input: rgba(255,255,255,0.1);
+  --ring: var(--moonstone-400);
+
+  --sidebar: #052730;
+  --sidebar-foreground: var(--moonstone-200);
+  --sidebar-primary: var(--moonstone-400);
+  --sidebar-primary-foreground: var(--moonstone-900);
+  --sidebar-accent: #0A3540;
+  --sidebar-accent-foreground: var(--moonstone-300);
+  --sidebar-border: rgba(255,255,255,0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-xl: calc(var(--radius) + 6px);
+}
+
+/* ════════════════════════════════════════════════════
+   BASE STYLES
+   ════════════════════════════════════════════════════ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground min-h-screen;
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  code, pre {
+    font-family: var(--font-mono);
+  }
+
+  ::selection {
+    background: var(--moonstone-100);
+    color: var(--moonstone-800);
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--moonstone-200);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--moonstone-400);
+  }
+}
+
+/* ════════════════════════════════════════════════════
+   COMPONENT UTILITIES
+   ════════════════════════════════════════════════════ */
+@layer utilities {
+
+  /* ── EduMK Buttons ── */
+  .btn-moonstone {
+    background: var(--moonstone-500);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-moonstone:hover {
+    background: var(--moonstone-700);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(58,168,193,0.3);
+  }
+
+  .btn-plum {
+    background: var(--plum-700);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .btn-plum:hover { background: var(--plum-800); }
+
+  .btn-outline-moonstone {
+    background: transparent;
+    border: 1.5px solid var(--moonstone-500);
+    color: var(--moonstone-700);
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  .btn-outline-moonstone:hover {
+    background: var(--moonstone-50);
+  }
+
+  /* ── EduMK Cards ── */
+  .card-edumk {
+    background: var(--neutral-0);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: box-shadow 200ms ease, transform 200ms ease, border-color 200ms ease;
+  }
+  .card-edumk:hover {
+    box-shadow: 0 6px 20px rgba(58,168,193,0.12);
+    transform: translateY(-2px);
+    border-color: var(--moonstone-300);
+  }
+
+  /* ── Badges ── */
+  .badge-medical {
+    background: var(--moonstone-50);
+    color: var(--moonstone-700);
+    border: 1px solid var(--moonstone-200);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .badge-featured {
+    background: var(--vanilla-100);
+    color: var(--vanilla-800);
+    border: 1px solid var(--vanilla-200);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .badge-completed {
+    background: rgba(5,150,105,0.1);
+    color: var(--success);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* ── Forms ── */
+  .input-edumk {
+    background: white;
+    border: 1.5px solid var(--neutral-200);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 15px;
+    transition: border-color 200ms, box-shadow 200ms;
+    width: 100%;
+    outline: none;
+  }
+  .input-edumk:focus {
+    border-color: var(--moonstone-500);
+    box-shadow: 0 0 0 3px rgba(58,168,193,0.12);
+  }
+
+  /* ── Section headings ── */
+  .heading-plum {
+    color: var(--plum-700);
+    font-weight: 700;
+  }
+  .heading-moonstone {
+    color: var(--moonstone-600);
+    font-weight: 600;
+  }
+
+  /* ── Hero pattern ── */
+  .hero-pattern {
+    background-image:
+      radial-gradient(circle, rgba(58,168,193,0.15) 1px, transparent 1px),
+      radial-gradient(circle, rgba(58,168,193,0.08) 1px, transparent 1px);
+    background-size: 40px 40px, 80px 80px;
+    background-position: 0 0, 20px 20px;
+  }
+
+  /* ── Vanilla section ── */
+  .section-vanilla {
+    background: linear-gradient(135deg, var(--vanilla-50) 0%, var(--neutral-0) 100%);
+  }
+
+  /* ── Sidebar active link ── */
+  .sidebar-link-active {
+    background: var(--moonstone-50);
+    color: var(--moonstone-600);
+    font-weight: 600;
+  }
+  .sidebar-link-hover:hover {
+    background: var(--moonstone-50);
+    color: var(--moonstone-700);
+  }
+
+  /* ── Stat card ── */
+  .stat-card-vanilla {
+    background: var(--vanilla-50);
+    border: 1px solid var(--vanilla-200);
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  /* ── Plum gradient ── */
+  .bg-plum-gradient {
+    background: linear-gradient(135deg, var(--plum-800) 0%, var(--plum-700) 50%, var(--plum-500) 100%);
+  }
+
+  /* ── Moonstone gradient ── */
+  .bg-moonstone-gradient {
+    background: linear-gradient(135deg, var(--moonstone-700) 0%, var(--moonstone-500) 60%, var(--moonstone-400) 100%);
+  }
+
+  /* ── Hero section ── */
+  .hero-section {
+    background: linear-gradient(160deg, var(--vanilla-50) 0%, var(--neutral-0) 40%, var(--moonstone-50) 100%);
+  }
+}
+
+/* ════════════════════════════════════════════════════
+   EduMK — تحسينات التباين والراحة البصرية
+   ════════════════════════════════════════════════════ */
+
+:root {
+  /* ── تخفيف الأرضيات الملونة ── */
+  --hero-bg-1: #FFFFFF;
+  --hero-bg-2: #FAFBFC;
+  --hero-bg-3: var(--moonstone-50);
+
+  /* ── نصوص أكثر راحة للعين ── */
+  --heading-color: #2A1A29;
+  --subtitle-color: #2A7E92;
+  --body-color: #44403C;
+
+  /* ── أزرار أكثر هدوءاً ── */
+  --btn-primary-bg:     var(--moonstone-600);
+  --btn-primary-hover:  var(--moonstone-700);
+  --btn-secondary-border:    var(--plum-700);
+  --btn-secondary-hover-bg:  var(--plum-50);
+}
+
+/* ── Hero section: أفتح وأهدأ ── */
+.hero-section {
+  background: linear-gradient(
+    160deg,
+    #FAFBFC 0%,
+    #FFFFFF 40%,
+    var(--moonstone-50) 100%
+  ) !important;
+}
+
+/* نقاط الـ Hero أخف ── */
+.hero-pattern {
+  background-image: radial-gradient(
+    circle,
+    rgba(58,168,193,0.06) 1px,
+    transparent 1px
+  ) !important;
+  background-size: 40px 40px !important;
+}
+
+/* ── البطاقات: حدود وظلال أنعم ── */
+.card-edumk {
+  border-color: var(--neutral-200) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06) !important;
+}
+.card-edumk:hover {
+  border-color: var(--moonstone-200) !important;
+  box-shadow: 0 4px 12px rgba(58,168,193,0.10) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ── تحسين قراءة النصوص ── */
+@layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.01em;
+  }
+
+  p, span, li {
+    line-height: 1.65;
+  }
+
+  /* عناوين أكثر هدوءاً */
+  h1 { color: #2A1A29; }
+  h2 { color: #2A1A29; }
+  h3 { color: #2A1A29; }
+}
+
+/* ── Buttons: focus ring واضح وتأثيرات هادئة ── */
+button:focus-visible {
+  outline: 2px solid var(--moonstone-500);
+  outline-offset: 2px;
+}
+
+/* ── تحسين مؤشر التمرير ── */
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-300) !important;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--moonstone-300) !important;
+}
